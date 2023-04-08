@@ -2572,15 +2572,11 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
       case "buypremium":
       case "donate":
         {
-          tio.sendMessage(
-            m.chat,
-            {
-              image: fs.readFileSync("./media/image/tio.jpg"),
-              caption: `*${ucapanWaktu} Halo Kak ${m.pushName}*\n\n _yukk bantu bot ini agar tetap hidup dengan donasi untuk perpanjang server, tenang donasi ini tidak ada minimalnya kok_\n\nhttps://saweria.co/rzkiyy\nJika Kamu Berkenan Silakan Kirim Bukti Bahwa Kamu Telah Berdonasi Agar Nomor Kamu Dapat Di Upgare Yaa!`,
-            },
-            { quoted: m }
+          m.reply(
+            `Halo\n\n _yukk bantu bot ini agar tetap hidup dengan donasi untuk perpanjang server, tenang donasi ini tidak ada minimalnya kok_\n\nhttps://saweria.co/rzkiyy\nJika Kamu Berkenan Silakan Kirim Bukti Bahwa Kamu Telah Berdonasi Agar Nomor Kamu Dapat Di Upgare Yaa!*`
           )
         }
+        {
         break
       case "sewabot":
       case "sewa":
