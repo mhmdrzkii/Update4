@@ -1939,7 +1939,7 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
             "Coba Ulangi",
             "Ngimpi kah?",
             "yakin bisa?",
-            "yo ndak tau, kok tanya saya,
+            "yo ndak tau, kok tanya saya",
           ]
           let keh = bisa[Math.floor(Math.random() * bisa.length)]
           let jawab = `*Bisakah ${text}*\nJawab : ${keh}`
