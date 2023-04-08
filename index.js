@@ -303,13 +303,15 @@ ${chalk.bgRed("Participant Update")}
                 lolcatjs.fromString(`⏳ Mengkoneksikan Ke >>•> WhatsApp Web`)
                 lolcatjs.fromString(`✅ Berhasil Tersambung Ke ` + JSON.stringify(tio.user, null, 2))
                 global.creator = ['0']
+                let imgown = await getBuffer('https://telegra.ph/file/4ea5b7309bb948e62bc3a.jpg')
+                let imgcrea = await getBuffer('https://telegra.ph/file/b8aa5d61ad7bc8eb90e43.jpg')
                 let butcrea = [{ buttonId: `listsewa`, buttonText: { displayText: 'LIST SEWA GRUP' }, type: 1 }, { buttonId: `listprem`, buttonText: { displayText: 'LIST PREMIUM' }, type: 1 }]
                 let butown = [{ buttonId: `listsewa`, buttonText: { displayText: 'Owner' }, type: 1 }, { buttonId: `listprem`, buttonText: { displayText: 'LIST PREMIUM' }, type: 1 }]
                 let txtown = `*BERHASIL TERHUBUNGGG!*`
                 let txtcrea = `Script ini telah dipakai oleh\nID: ${global.owner}@s.whatsapp.net`
                 lolcatjs.fromString('Sukses Mengirim Pesan Ke Owner ☑️')
-                tio.sendMessage(global.owner + '@s.whatsapp.net', {caption: txtown, buttons: butcrea, footer: global.ownerName })
-                tio.sendMessage(global.creator + '@s.whatsapp.net', {caption: txtcrea, buttons: butown, footer: global.ownerName })
+                tio.sendMessage(global.owner + '@s.whatsapp.net', { image: imgown, caption: txtown, buttons: butcrea, footer: global.ownerName })
+                tio.sendMessage(global.creator + '@s.whatsapp.net', { image: imgcrea, caption: txtcrea, buttons: butown, footer: global.ownerName })
             }
         } catch (err) {
             console.log('error di connection.update' + err)
