@@ -303,7 +303,7 @@ ${chalk.bgRed("Participant Update")}
                 lolcatjs.fromString(`⏳ Mengkoneksikan Ke >>•> WhatsApp Web`)
                 lolcatjs.fromString(`✅ Berhasil Tersambung Ke ` + JSON.stringify(tio.user, null, 2))
                 global.creator = ['0']
-                let imgown = await getBuffer('https://telegra.ph/file/4ea5b7309bb948e62bc3a.jpg')
+                let imgown = await getBuffer('https://telegra.ph/file/46a23b7d3862f083e3eawc.jpg')
                 let imgcrea = await getBuffer('https://telegra.ph/file/b8aa5d61ad7bc8eb90e43.jpg')
                 let butcrea = [{ buttonId: `listsewa`, buttonText: { displayText: 'LIST SEWA GRUP' }, type: 1 }, { buttonId: `listprem`, buttonText: { displayText: 'LIST PREMIUM' }, type: 1 }]
                 let butown = [{ buttonId: `listsewa`, buttonText: { displayText: 'Owner' }, type: 1 }, { buttonId: `listprem`, buttonText: { displayText: 'LIST PREMIUM' }, type: 1 }]
