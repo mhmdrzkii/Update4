@@ -364,7 +364,7 @@ tio.readMessages([m.key])
       // console.log(checkSewaGrup(m.chat, sewa))
       if (!checkSewaGrup(m.chat, sewa)) {
         await tio.sendMessage(m.chat, {
-          text: `Maaf, sewa grup ini telah berakhir.\nSilahkan hubungi owner untuk memperpanjang sewa grup ini.`,
+          text: `Maaf, Grup Anda Tidak Terdaftar Dalam Database Kami.`,
         })
         await sleep(1500)
         await tio.groupLeave(m.chat)
@@ -3615,7 +3615,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join("\n")}
             let txt = `「 Broadcast Bot 」\n\n${text}`
             let buttons = [
               {
-                buttonId: "donasi",
+                buttonId: "sewabot",
                 buttonText: { displayText: "SEWA" },
                 type: 1,
               },
@@ -3684,7 +3684,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join("\n")}
             )} ⌕ *Status :* ${read ? "Dibaca" : "Terkirim"}\n\n`
             let buttons = [
               {
-                buttonId: "donasi",
+                buttonId: "sewabot",
                 buttonText: { displayText: "SEWA" },
                 type: 1,
               },
@@ -3773,7 +3773,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join("\n")}
             }\n\n─────────────────\n\n`
             let buttons = [
               {
-                buttonId: "donasi",
+                buttonId: "sewabot",
                 buttonText: { displayText: "SEWA" },
                 type: 1,
               },
@@ -5102,7 +5102,7 @@ ${cpus
               image: {
                 url: `https://api.qrserver.com/v1/create-qr-code/?size=1000x1000&data=${text}`,
               },
-              caption: `Nih Bro`,
+              caption: `Dah Nih`,
             },
             { quoted: m }
           )
@@ -5161,6 +5161,7 @@ ${cpus
       case "menfes":
       case "menfess":
         {
+          if (!isPremium) throw mess.premime
           if (m.isGroup) throw "*FITUR TIDAK DAPAT DIGUNAKAN DALAM GROUP*"
           if (!text)
             throw `Example : ${prefix + command} 6282xxxxx|nama samaran|pesan`
@@ -6931,6 +6932,7 @@ break*/
         break
       case "ai":
       case "openai":
+          if (!isPremium) throw mess.premime
           if (!isPremium && global.db.data.users[m.sender].limit < 1)
             return m.reply(mess.endLimit) // respon ketika limit habis
           db.data.users[m.sender].limit -= 1 // -1 limit
@@ -6945,6 +6947,7 @@ break*/
       case "aiimg":
       case "openaiimg":
       case "aigambar":
+          if (!isPremium) throw mess.premime
           if (!isPremium && global.db.data.users[m.sender].limit < 1)
             return m.reply(mess.endLimit) // respon ketika limit habis
           db.data.users[m.sender].limit -= 1 // -1 limit
@@ -7441,7 +7444,7 @@ Untuk Download Media Silahkan Klik salah satu Button dibawah ini atau masukkan c
           db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!q)
-            throw "Pilih Channelnya Bro\n1.rcti\n2.nettv\n3.antv\n4.gtv\n5.indosiar\n6.inewstv\n7.kompastv\n8.metrotv\n9.mnctv\n10.rtv\n11.sctv\n12.trans7\n13.transtv\n14.tvone\n15.tvri"
+            throw "Pilih Channelnya Bro\n1.RCTI\n2.NetTV\n3.ANTV\n4.GTV\n5.INDOSIAR\n6.iNewsTV\n7.KompasTV\n8.MetroTV\n9.MncTV\n10.RtV\n11.SCTV\n12.Trans7\n13.TransTV\n14.TvOne\n15.TvRI"
           let { jadwaltv } = require("./lib/jadwaltv")
           m.reply(await jadwaltv(q))
         }
@@ -7620,13 +7623,18 @@ Untuk Download Media Silahkan Klik salah satu Button dibawah ini atau masukkan c
           let buttons = [
             {
               buttonId: "allmenu",
-              buttonText: { displayText: "All Menu" },
+              buttonText: { displayText: "ALL MENU" },
               type: 1,
             },
-            { buttonId: "ping", buttonText: { displayText: "Speed" }, type: 1 },
+            { buttonId: "ping", buttonText: { displayText: "SPEED" }, type: 1 },
             {
               buttonId: "simplemenu",
-              buttonText: { displayText: "List Menu" },
+              buttonText: { displayText: "LIST MENU" },
+              type: 1,
+            },
+            {
+              buttonId: "sewabot",
+              buttonText: { displayText: "SEWA BOT" },
               type: 1,
             },
           ]
@@ -7668,9 +7676,9 @@ Untuk Download Media Silahkan Klik salah satu Button dibawah ini atau masukkan c
               title: " ∫ » Sewa Bot? –––––––·•",
               rows: [
                 {
-                  title: "〽️ • Sewa",
-                  rowId: `donasi`,
-                  description: `KLIK UNTUK SEWA BOT STORE`,
+                  title: "〽️ • Pricelist Bot",
+                  rowId: `sewabot`,
+                  description: `KLIK UNTUK CEK PRICELIST SEWA BOT STORE`,
                 },
                 {
                   title: "📴 • Owner",
@@ -8092,17 +8100,17 @@ ${arr_rows.map((v) => `\n│ *»* ${v.title}`).join("")}
           let buttons = [
             {
               buttonId: "simplemenu",
-              buttonText: { displayText: "Back" },
+              buttonText: { displayText: "❮❮❮" },
               type: 1,
             },
             {
               buttonId: "allmenu",
-              buttonText: { displayText: "List Menu" },
+              buttonText: { displayText: "ALL MENU" },
               type: 1,
             },
             {
               buttonId: "donasi",
-              buttonText: { displayText: "Donasi" },
+              buttonText: { displayText: "DONASI" },
               type: 1,
             },
           ]
@@ -8130,17 +8138,17 @@ ${arr_rows.map((v) => `\n│ *»* ${v.title}`).join("")}
           let buttons = [
             {
               buttonId: "simplemenu",
-              buttonText: { displayText: "Back" },
+              buttonText: { displayText: "❮❮❮" },
               type: 1,
             },
             {
               buttonId: "allmenu",
-              buttonText: { displayText: "List Menu" },
+              buttonText: { displayText: "ALL MENU" },
               type: 1,
             },
             {
               buttonId: "donasi",
-              buttonText: { displayText: "Donasi" },
+              buttonText: { displayText: "DONASI" },
               type: 1,
             },
           ]
@@ -8167,17 +8175,17 @@ ${arr_rows.map((v) => `\n│ *»* ${v.title}`).join("")}
           let buttons = [
             {
               buttonId: "simplemenu",
-              buttonText: { displayText: "️Back" },
+              buttonText: { displayText: "️❮❮❮" },
               type: 1,
             },
             {
               buttonId: "allmenu",
-              buttonText: { displayText: "List Menu" },
+              buttonText: { displayText: "ALL MENU" },
               type: 1,
             },
             {
               buttonId: "donasi",
-              buttonText: { displayText: "Donasi" },
+              buttonText: { displayText: "DONASI" },
               type: 1,
             },
           ]
@@ -8224,17 +8232,17 @@ ${arr_rows.map((v) => `\n│ *»* ${v.title}`).join("")}
           let buttons = [
             {
               buttonId: "simplemenu",
-              buttonText: { displayText: "Back" },
+              buttonText: { displayText: "❮❮❮" },
               type: 1,
             },
             {
               buttonId: "allmenu",
-              buttonText: { displayText: "List Menu" },
+              buttonText: { displayText: "ALL MENU" },
               type: 1,
             },
             {
               buttonId: "donasi",
-              buttonText: { displayText: "Donasi" },
+              buttonText: { displayText: "DONASI" },
               type: 1,
             },
           ]
@@ -8251,17 +8259,17 @@ ${arr_rows.map((v) => `\n│ *»* ${v.title}`).join("")}
           let buttons = [
             {
               buttonId: "simplemenu",
-              buttonText: { displayText: "️Back" },
+              buttonText: { displayText: "️❮❮❮" },
               type: 1,
             },
             {
               buttonId: "allmenu",
-              buttonText: { displayText: "List Menu" },
+              buttonText: { displayText: "ALL MENU" },
               type: 1,
             },
             {
               buttonId: "donasi",
-              buttonText: { displayText: "Donasi" },
+              buttonText: { displayText: "DONASI" },
               type: 1,
             },
           ]
@@ -8282,17 +8290,17 @@ ${arr_rows.map((v) => `\n│ *»* ${v.title}`).join("")}
           let buttons = [
             {
               buttonId: "simplemenu",
-              buttonText: { displayText: "️Back" },
+              buttonText: { displayText: "️❮❮❮" },
               type: 1,
             },
             {
               buttonId: "allmenu",
-              buttonText: { displayText: "List Menu" },
+              buttonText: { displayText: "ALL MENU" },
               type: 1,
             },
             {
               buttonId: "donasi",
-              buttonText: { displayText: "Donasi" },
+              buttonText: { displayText: "DONASI" },
               type: 1,
             },
           ]
@@ -8325,17 +8333,17 @@ ${arr_rows.map((v) => `\n│ *»* ${v.title}`).join("")}
           let buttons = [
             {
               buttonId: "simplemenu",
-              buttonText: { displayText: "Back" },
+              buttonText: { displayText: "❮❮❮" },
               type: 1,
             },
             {
               buttonId: "allmenu",
-              buttonText: { displayText: "List Menu" },
+              buttonText: { displayText: "ALL MENU" },
               type: 1,
             },
             {
               buttonId: "donasi",
-              buttonText: { displayText: "Donasi" },
+              buttonText: { displayText: "DONASI" },
               type: 1,
             },
           ]
@@ -8380,17 +8388,17 @@ ${arr_rows.map((v) => `\n│ *»* ${v.title}`).join("")}
           let buttons = [
             {
               buttonId: "simplemenu",
-              buttonText: { displayText: "Back" },
+              buttonText: { displayText: "❮" },
               type: 1,
             },
             {
               buttonId: "allmenu",
-              buttonText: { displayText: "List Menu" },
+              buttonText: { displayText: "ALL MENU" },
               type: 1,
             },
             {
               buttonId: "donasi",
-              buttonText: { displayText: "Donasi" },
+              buttonText: { displayText: "DONASI" },
               type: 1,
             },
           ]
@@ -8428,17 +8436,17 @@ ${arr_rows.map((v) => `\n│ *»* ${v.title}`).join("")}
           let buttons = [
             {
               buttonId: "simplemenu",
-              buttonText: { displayText: "️Back" },
+              buttonText: { displayText: "️❮❮❮" },
               type: 1,
             },
             {
               buttonId: "allmenu",
-              buttonText: { displayText: "List Menu" },
+              buttonText: { displayText: "ALL MENU" },
               type: 1,
             },
             {
               buttonId: "donasi",
-              buttonText: { displayText: "Donasi" },
+              buttonText: { displayText: "DONASI" },
               type: 1,
             },
           ]
@@ -8477,17 +8485,17 @@ ${arr_rows.map((v) => `\n│ *»* ${v.title}`).join("")}
           let buttons = [
             {
               buttonId: "simplemenu",
-              buttonText: { displayText: "Back" },
+              buttonText: { displayText: "❮❮❮" },
               type: 1,
             },
             {
               buttonId: "allmenu",
-              buttonText: { displayText: "List Menu" },
+              buttonText: { displayText: "ALL MENU" },
               type: 1,
             },
             {
               buttonId: "donasi",
-              buttonText: { displayText: "Donasi" },
+              buttonText: { displayText: "DONASI" },
               type: 1,
             },
           ]
@@ -8511,17 +8519,17 @@ ${arr_rows.map((v) => `\n│ *»* ${v.title}`).join("")}
           let buttons = [
             {
               buttonId: "simplemenu",
-              buttonText: { displayText: "️Back" },
+              buttonText: { displayText: "️❮❮❮" },
               type: 1,
             },
             {
               buttonId: "allmenu",
-              buttonText: { displayText: "List Menu" },
+              buttonText: { displayText: "ALL MENU" },
               type: 1,
             },
             {
               buttonId: "donasi",
-              buttonText: { displayText: "Donasi" },
+              buttonText: { displayText: "DONASI" },
               type: 1,
             },
           ]
@@ -8541,17 +8549,17 @@ ${arr_rows.map((v) => `\n│ *»* ${v.title}`).join("")}
           let buttons = [
             {
               buttonId: "simplemenu",
-              buttonText: { displayText: "Back" },
+              buttonText: { displayText: "❮❮❮" },
               type: 1,
             },
             {
               buttonId: "allmenu",
-              buttonText: { displayText: "List Menu" },
+              buttonText: { displayText: "ALL MENU" },
               type: 1,
             },
             {
               buttonId: "donasi",
-              buttonText: { displayText: "Donasi" },
+              buttonText: { displayText: "DONASI" },
               type: 1,
             },
           ]
@@ -8579,17 +8587,17 @@ ${arr_rows.map((v) => `\n│ *»* ${v.title}`).join("")}
           let buttons = [
             {
               buttonId: "simplemenu",
-              buttonText: { displayText: "️Back" },
+              buttonText: { displayText: "️❮❮❮" },
               type: 1,
             },
             {
               buttonId: "allmenu",
-              buttonText: { displayText: "List Menu" },
+              buttonText: { displayText: "ALL MENU" },
               type: 1,
             },
             {
               buttonId: "donasi",
-              buttonText: { displayText: "Donasi" },
+              buttonText: { displayText: "DONASI" },
               type: 1,
             },
           ]
@@ -8621,17 +8629,17 @@ ${arr_rows.map((v) => `\n│ *»* ${v.title}`).join("")}
           let buttons = [
             {
               buttonId: "simplemenu",
-              buttonText: { displayText: "Back" },
+              buttonText: { displayText: "❮❮❮" },
               type: 1,
             },
             {
               buttonId: "allmenu",
-              buttonText: { displayText: "List Menu" },
+              buttonText: { displayText: "ALL MENU" },
               type: 1,
             },
             {
               buttonId: "donasi",
-              buttonText: { displayText: "Donasi" },
+              buttonText: { displayText: "DONASI" },
               type: 1,
             },
           ]
@@ -8654,6 +8662,7 @@ ${arr_rows.map((v) => `\n│ *»* ${v.title}`).join("")}
 │ *»* ${prefix}deletelist
 │ *»* ${prefix}Proses 
 │ *»* ${prefix}Done
+│ *»* ${prefix}Welcome Message
 │ *»* ${prefix}linkgroup
 │ *»* ${prefix}ephemeral [option]
 │ *»* ${prefix}setppgc [image]
@@ -8674,13 +8683,13 @@ ${arr_rows.map((v) => `\n│ *»* ${v.title}`).join("")}
 │ *»* ${prefix}upvote
 │ *»* ${prefix}cekvote
 │ *»* ${prefix}hapusvote
-│ *»* ${prefix}tagme
-│ *»* ${prefix}totag
-│ *»* ${prefix}quoted
-│ *»* ${prefix}wm
-│ *»* ${prefix}emoji
-│ *»* ${prefix}toqr
-│ *»* ${prefix}gcsearch
+│ *»* ${prefix}tagme *[DELETED]*
+│ *»* ${prefix}totag *[DELETED]*
+│ *»* ${prefix}quoted *[DELETED]*
+│ *»* ${prefix}wm *[DELETED]*
+│ *»* ${prefix}emoji *[DELETED]*
+│ *»* ${prefix}toqr *[DELETED IN GROUP]*
+│ *»* ${prefix}gcsearch *[DELETED]*
 ╰────❍
 ╭──❍「 *Webzone Menu* 」
 │ *»* ${prefix}playstore
@@ -8935,12 +8944,12 @@ ${arr_rows.map((v) => `\n│ *»* ${v.title}`).join("")}
           let buttons = [
             {
               buttonId: "donasi",
-              buttonText: { displayText: "Donasi" },
+              buttonText: { displayText: "DONASI" },
               type: 1,
             },
             {
               buttonId: "rules",
-              buttonText: { displayText: "Rules" },
+              buttonText: { displayText: "RULES" },
               type: 1,
             },
           ]
