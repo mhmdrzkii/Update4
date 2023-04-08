@@ -2686,7 +2686,7 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
           let buttons = [
             {
               buttonId: "rules",
-              buttonText: { displayText: "Rules" },
+              buttonText: { displayText: "RULES" },
               type: 1,
             },
           ]
@@ -2859,7 +2859,7 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
         {
           if (args.length < 2)
             return m.reply(
-              `Penggunaan :\n*#addprem* @tag waktu\n*#addprem* nomor waktu\n\nContoh : #addprem @tag 30d`
+              `Penggunaan :\n*#addprem* @Tag Durasi\n*#Addprem* 628xx Durasi\n\nContoh : #Addprem 628xx 30d`
             )
           if (m.mentionedJid.length !== 0) {
             for (let i = 0; i < m.mentionedJid.length; i++) {
@@ -2867,14 +2867,14 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
             }
             tio.sendMessage(
               m.chat,
-              { text: "Sukses Premium" },
+              { text: "*DONE ADD MEMBER VIA TAG BOSS*" },
               { quoted: fkontak }
             )
           } else {
             prem.addPremiumUser(args[0] + "@s.whatsapp.net", args[1], premium)
             tio.sendMessage(
               m.chat,
-              { text: "Sukses Via Nomor" },
+              { text: "DONE ADD MEMBER VIA NOMOR BOSS" },
               { quoted: fkontak }
             )
           }
@@ -2887,7 +2887,7 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
         }
         {
           if (args.length < 1)
-            throw `Penggunaan :\n*#delprem* @tag\n*#delprem* nomor`
+            throw `Penggunaan :\n*#Delprem* @Tag\n*#Delprem* 628xx`
           if (m.mentionedJid.length !== 0) {
             for (let i = 0; i < m.mentionedJid.length; i++) {
               premium.splice(
@@ -2901,7 +2901,7 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
             }
             tio.sendMessage(
               m.chat,
-              { text: "Sukses Delete" },
+              { text: "*SUKSES DELETE*" },
               { quoted: fkontak }
             )
           } else {
@@ -2912,7 +2912,7 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
             fs.writeFileSync("./database/premium.json", JSON.stringify(premium))
             tio.sendMessage(
               m.chat,
-              { text: "Sukses Via Nomer" },
+              { text: "*SUKSES DELETE VIA NOMOR*" },
               { quoted: fkontak }
             )
           }
@@ -7516,12 +7516,12 @@ Untuk Download Media Silahkan Klik salah satu Button dibawah ini atau masukkan c
           let buttons = [
             {
               buttonId: "allmenu",
-              buttonText: { displayText: "List Menu" },
+              buttonText: { displayText: "LIST MENU" },
               type: 1,
             },
             {
-              buttonId: "donasi",
-              buttonText: { displayText: "Sewa" },
+              buttonId: "sewabot",
+              buttonText: { displayText: "SEWA BOT" },
               type: 1,
             },
           ]
@@ -7785,11 +7785,6 @@ Untuk Download Media Silahkan Klik salah satu Button dibawah ini atau masukkan c
                   rowId: `menu`,
                   description: `╰ ► 📢 Thanks For Subscribe ♕︎`,
                 },
-                {
-                  title: "📚 • Github",
-                  rowId: `sc`,
-                  description: `╰ ► 🎷 Follow My Github ♕︎`,
-                },
               ],
             },
           ]
@@ -7958,7 +7953,7 @@ ${arr_rows.map((v) => `\n│ *»* ${v.title}`).join("")}
           let buttons = [
             {
               buttonId: "owner",
-              buttonText: { displayText: "Kontak Admin" },
+              buttonText: { displayText: "KONTAK ADMIN!" },
               type: 1,
             },
           ]
@@ -8015,17 +8010,17 @@ ${arr_rows.map((v) => `\n│ *»* ${v.title}`).join("")}
           let buttons = [
             {
               buttonId: "simplemenu",
-              buttonText: { displayText: "Back" },
+              buttonText: { displayText: "❮❮❮" },
               type: 1,
             },
             {
               buttonId: "allmenu",
-              buttonText: { displayText: "List Menu" },
+              buttonText: { displayText: "LIST MENU" },
               type: 1,
             },
             {
               buttonId: "donasi",
-              buttonText: { displayText: "Donasi" },
+              buttonText: { displayText: "DONASI" },
               type: 1,
             },
           ]
@@ -8052,17 +8047,17 @@ ${arr_rows.map((v) => `\n│ *»* ${v.title}`).join("")}
           let buttons = [
             {
               buttonId: "simplemenu",
-              buttonText: { displayText: "️Back" },
+              buttonText: { displayText: "❮❮❮" },
               type: 1,
             },
             {
               buttonId: "allmenu",
-              buttonText: { displayText: "List Menu" },
+              buttonText: { displayText: "ALL MENU" },
               type: 1,
             },
             {
               buttonId: "donasi",
-              buttonText: { displayText: "Donasi" },
+              buttonText: { displayText: "DONASI" },
               type: 1,
             },
           ]
