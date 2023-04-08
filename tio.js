@@ -2575,8 +2575,7 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
           tio.sendMessage(
             m.chat,
             {
-              image: fs.readFileSync("./media/image/tio.jpg"),
-              caption: `*${ucapanWaktu} Halo Kak ${m.pushName}*\n\n _Jika Kamu Merasa BOT Ini Berguna YUK Bantu Berdonasi Agar BOT Ini Dapat Terus Membantu Kamu_`,
+              caption: `*${ucapanWaktu} Halo Kak ${m.pushName}*\n\n _yukk bantu bot ini agar tetap hidup dengan donasi untuk perpanjang server, tenang donasi ini tidak ada minimalnya kok_\n\nhttps://saweria.co/rzkiyy\nJika Kamu Berkenan Silakan Kirim Bukti Bahwa Kamu Telah Berdonasi Agar Nomor Kamu Dapat Di Upgare Yaa!`,
             },
             { quoted: m }
           )
@@ -2585,7 +2584,7 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
       case "sewabot":
       case "sewa":
         {
-          sewa = `「 *PRICELIST SEWA BOT* 」\n\n*»* 7 DAY : *5.000 IDR*\n*»* 14 DAY : *7.500*\n*»* 30 DAY : *12.000 IDR*\n*»* 60 DAY :*17.000 IDR*\n\nAvailable Payment \n_QRIS/DANA/BCA/MANDIRI_ \n\nBerikut Beberapa Fitur GRUP `
+          sewa = `「 *PRICELIST SEWA BOT* 」\n\n*»* 7 DAY : *5.000 IDR*\n*»* 14 DAY : *7.500*\n*»* 30 DAY : *12.000 IDR*\n*»* 60 DAY :*17.000 IDR*\n\nAvailable Payment \n_QRIS/DANA/BCA/MANDIRI_ \n\nBerikut Beberapa Fitur Tersedia `
           let buttons = [
             {
               buttonId: "mgroup2",
