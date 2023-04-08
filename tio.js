@@ -1534,6 +1534,9 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
         )
         break
       case "tebak":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text)
             throw `Example : ${
@@ -1774,6 +1777,9 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
         break
       case "kuismath":
       case "math":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (kuismath.hasOwnProperty(m.sender.split("@")[0]))
             throw "Masih Ada Sesi Yang Belum Diselesaikan!"
@@ -1840,6 +1846,9 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
 
       //Pembatas FUN===============================================
       case "slot":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           const somtoy = sotoy[Math.floor(Math.random() * sotoy.length)]
           let sloth = `[  🎰VIRTUAL SLOT 🎰  ]\n------------------------\n\n🍒 : 🍌 : 🍇\n${somtoy}<=====\n🍇 : 🍌 : 🍒\n\n------------------------\n[  🎰 VIRTUAL SLOT 🎰  ]\n\n*Keterangan* :\n_Jika Mendapatkan 3Buah Sama_\n_Berarti Kamu Win_\n\n_Contoh : 🍒 : 🍒 : 🍒_ <=====`
@@ -1847,6 +1856,9 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
         }
         break
       case "jodohku":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!m.isGroup) throw mess.group
           let member = participants.map((u) => u.id)
@@ -1869,6 +1881,9 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
         }
         break
       case "jadian":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!m.isGroup) throw mess.group
           let member = participants.map((u) => u.id)
@@ -1909,6 +1924,9 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
         }
         break
       case "bisakah":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} saya menang?`
           let bisa = [
@@ -1921,6 +1939,7 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
             "Coba Ulangi",
             "Ngimpi kah?",
             "yakin bisa?",
+            "yo ndak tau, kok tanya saya,
           ]
           let keh = bisa[Math.floor(Math.random() * bisa.length)]
           let jawab = `*Bisakah ${text}*\nJawab : ${keh}`
@@ -1928,6 +1947,9 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
         }
         break
       case "apakah":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} saya bisa menang?`
           let apa = [
@@ -1945,6 +1967,9 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
         break
       case "kapan":
       case "kapankah":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} saya menang?`
           let kapan = [
@@ -1981,6 +2006,9 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
         }
         break
       case "cekmati":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (m.text.includes("@"))
             return m.reply(
@@ -1997,6 +2025,9 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
       case "love":
       case "cintaku":
       case "cinta":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           let mlove = [
             "⟪1%⟫",
@@ -2106,6 +2137,9 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
         }
         break
       case "daurulang":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           let mdaur = ["♳", "♴", "♵", "♶", "♷", "♸", "♹", "♺"]
           let mulng = mdaur[Math.floor(Math.random() * mdaur.length)]
@@ -2114,6 +2148,9 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
         }
         break
       case "dadu":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           let ddsa = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"]
           let klow = ddsa[Math.floor(Math.random() * ddsa.length)]
@@ -2122,6 +2159,9 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
         break
       case "rate":
       case "nilai":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           const ra = [
             "1",
@@ -2237,6 +2277,9 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
       case "gantengcek":
       case "handsome":
       case "handsomecheck":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text)
             return m.reply(`Tag Someone, Example : ${prefix + command} Tio`)
@@ -2354,6 +2397,9 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
       case "cantikcek":
       case "beautiful":
       case "beautifulcheck":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text)
             return m.reply(`Tag Someone, Example : ${prefix + command} Tio`)
@@ -2470,6 +2516,9 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
       case "tanyakerang":
       case "kerangajaib":
       case "kerang":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} saya menang?`
           let krng = [
@@ -2488,6 +2537,9 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
         }
         break
       case "fitnah":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (args.length < 1)
             throw `Usage :\n${prefix}fake [nomor|pesan|balasanbot]]\n\nEx : \n${prefix}fake 0|hai|hai juga markenlin`
@@ -2537,7 +2589,7 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
           let buttons = [
             {
               buttonId: "mgroup2",
-              buttonText: { displayText: "List Menu" },
+              buttonText: { displayText: "CEK FITUR" },
               type: 1,
             },
           ]
@@ -2557,7 +2609,7 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
       case "hit":
         {
           m.reply(
-            `*Total Hit : ${jumlahcmd}*\n*Total Hit Harian : ${jumlahharian}*`
+            `*Total Chat : ${jumlahcmd}*\n*Total Chat Harian : ${jumlahharian}*`
           )
         }
         break
@@ -2602,6 +2654,9 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
         }
         break
       case "myip":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!isCreator) throw mess.owner
           var http = require("http")
@@ -2640,6 +2695,9 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
         }
         break
       case "react":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!isCreator) throw mess.owner
           reactionMessage = {
@@ -3642,6 +3700,9 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join("\n")}
         break
       case "q":
       case "quoted":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           try {
             if (!m.quoted) return m.reply("Reply Pesannya!!")
@@ -3768,6 +3829,9 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join("\n")}
       case "slow":
       case "smooth":
       case "tupai":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         try {
           let set
           if (/bass/.test(command))
@@ -3936,9 +4000,12 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
         }
         break
       case "anonymous":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (m.isGroup)
-            return m.reply("Fitur Tidak Dapat Digunakan Untuk Group!")
+            return m.reply("*FITUR TIDAK DAPAT DIGUNAKA DALAM GROUP*!")
           this.anonymous = this.anonymous ? this.anonymous : {}
           let buttons = [
             {
@@ -3961,7 +4028,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
       case "keluar":
       case "leave": {
         if (m.isGroup)
-          return m.reply("Fitur Tidak Dapat Digunakan Untuk Group!")
+          return m.reply("*FITUR TIDAK DAPAT DIGUNAKAN DALAM GROUP*!")
         this.anonymous = this.anonymous ? this.anonymous : {}
         let room = Object.values(this.anonymous).find((room) =>
           room.check(m.sender)
@@ -3993,9 +4060,12 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
         if (command === "leave") break
       }
       case "mulai":
-      case "start": {
+      case "start":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit {
         if (m.isGroup)
-          return m.reply("Fitur Tidak Dapat Digunakan Untuk Group!")
+          return m.reply("*FITUR TIDAK DAPAT DIGUNAKAN DALAM GROUP*!")
         this.anonymous = this.anonymous ? this.anonymous : {}
         if (
           Object.values(this.anonymous).find((room) => room.check(m.sender))
@@ -4076,9 +4146,12 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
         break
       }
       case "next":
-      case "lanjut": {
+      case "lanjut":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit {
         if (m.isGroup)
-          return m.reply("Fitur Tidak Dapat Digunakan Untuk Group!")
+          return m.reply("FITUR TIDAK DAPAT DIGUNAKAN DALAM GROUP!")
         this.anonymous = this.anonymous ? this.anonymous : {}
         let romeo = Object.values(this.anonymous).find((room) =>
           room.check(m.sender)
@@ -4368,6 +4441,9 @@ ${cpus
       case "s":
       case "stickergif":
       case "sgif":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!quoted)
             throw `*Balas Video/Image Dengan Caption* ${prefix + command}`
@@ -4402,6 +4478,9 @@ ${cpus
       case "sgifwm":
       case "take":
       case "wm":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           let [teks1, teks2] = text.split`|`
           if (!teks1)
@@ -4437,6 +4516,9 @@ ${cpus
         }
         break
       case "emoji":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw "Mana Emojinya?"
           if (!q) return m.reply("emojinya?")
@@ -4520,6 +4602,9 @@ ${cpus
         }
         break
       case "iphoneemoji":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!q) return fakegroup("emojinya?")
           qes = args.join(" ")
@@ -4531,6 +4616,9 @@ ${cpus
         }
         break
       case "googleemoji":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!q) return fakegroup("emojinya?")
           qes = args.join(" ")
@@ -4542,6 +4630,9 @@ ${cpus
         }
         break
       case "samsungemoji":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!q) return fakegroup("emojinya?")
           qes = args.join(" ")
@@ -4553,6 +4644,9 @@ ${cpus
         }
         break
       case "microsoftemoji":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!q) return fakegroup("emojinya?")
           qes = args.join(" ")
@@ -4564,6 +4658,9 @@ ${cpus
         }
         break
       case "whatsappemoji":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!q) return fakegroup("emojinya?")
           qes = args.join(" ")
@@ -4575,6 +4672,9 @@ ${cpus
         }
         break
       case "twitteremoji":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!q) return fakegroup("emojinya?")
           qes = args.join(" ")
@@ -4587,6 +4687,9 @@ ${cpus
         break
       case "facebookemoji":
       case "fbemoji":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!q) return fakegroup("emojinya?")
           qes = args.join(" ")
@@ -4598,6 +4701,9 @@ ${cpus
         }
         break
       case "skypeemoji":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!q) return fakegroup("emojinya?")
           qes = args.join(" ")
@@ -4609,6 +4715,9 @@ ${cpus
         }
         break
       case "joyemoji":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!q) return fakegroup("emojinya?")
           qes = args.join(" ")
@@ -4620,6 +4729,9 @@ ${cpus
         }
         break
       case "mojiemoji":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!q) return fakegroup("emojinya?")
           qes = args.join(" ")
@@ -4631,6 +4743,9 @@ ${cpus
         }
         break
       case "pediaemoji":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!q) return fakegroup("emojinya?")
           qes = args.join(" ")
@@ -4643,6 +4758,9 @@ ${cpus
         break
       case "igemoji":
       case "=emoji":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!q) return fakegroup("emojinya?")
           qes = args.join(" ")
@@ -4692,6 +4810,9 @@ ${cpus
         }
         break
       case "attp":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} text`
           await tio.sendMedia(
@@ -4705,6 +4826,9 @@ ${cpus
         }
         break
       case "ttp":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} text`
           await tio.sendMedia(
@@ -4718,6 +4842,9 @@ ${cpus
         }
         break
       case "tts":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} text`
           let tts = await fetchJson(
@@ -4739,6 +4866,9 @@ ${cpus
       case "stikmeme":
       case "stickermeme":
       case "stikermeme":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           try {
             let respond = `Kirim/reply image/sticker dengan caption ${
@@ -4766,6 +4896,9 @@ ${cpus
         }
         break
       case "geturl":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} url/link`
           m.reply(mess.wait)
@@ -4777,6 +4910,9 @@ ${cpus
         break
       case "toimage":
       case "toimg":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!quoted) throw "Reply Image"
           if (!/webp/.test(mime))
@@ -4795,6 +4931,9 @@ ${cpus
         break
       case "tomp4":
       case "tovideo":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!quoted) throw "Reply Image"
           if (!/webp/.test(mime))
@@ -4818,6 +4957,9 @@ ${cpus
         break
       case "toaud":
       case "toaudio":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!/video/.test(mime) && !/audio/.test(mime))
             throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan Audio Dengan Caption ${
@@ -4839,6 +4981,9 @@ ${cpus
         }
         break
       case "tomp3":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (/document/.test(mime))
             throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan MP3 Dengan Caption ${
@@ -4869,6 +5014,9 @@ ${cpus
         break
       case "tovn":
       case "toptt":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!/video/.test(mime) && !/audio/.test(mime))
             throw `Reply Video/Audio Yang Ingin Dijadikan VN Dengan Caption ${
@@ -4890,6 +5038,9 @@ ${cpus
         }
         break
       case "togif":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!quoted) throw "Reply Image"
           if (!/webp/.test(mime))
@@ -4913,6 +5064,9 @@ ${cpus
         }
         break
       case "tourl":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           m.reply(mess.wait)
           let {
@@ -4933,6 +5087,9 @@ ${cpus
         break
       case "toqr":
       case "qr":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw "No Query Text"
           m.reply(mess.wait)
@@ -4951,6 +5108,9 @@ ${cpus
       case "imagenobg":
       case "removebg":
       case "remove-bg":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!quoted)
             throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
@@ -4998,7 +5158,7 @@ ${cpus
       case "menfes":
       case "menfess":
         {
-          if (m.isGroup) throw "fitur tidak dapat digunakan di grup"
+          if (m.isGroup) throw "*FITUR TIDAK DAPAT DIGUNAKAN DALAM GROUP*"
           if (!text)
             throw `Example : ${prefix + command} 6282xxxxx|nama samaran|pesan`
           var mon = args.join(" ")
@@ -5045,6 +5205,9 @@ ${cpus
         break
       case "yts":
       case "ytsearch":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} story wa anime`
           let yts = require("yt-search")
@@ -5070,6 +5233,9 @@ ${cpus
         }
         break
       case "google":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} fatih arridho`
           let google = require("google-it")
@@ -5085,6 +5251,9 @@ ${cpus
         }
         break
       case "gimage":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           try {
             if (!text) throw `Example : ${prefix + command} kaori cicak`
@@ -5117,6 +5286,9 @@ ${cpus
         break
       case "play":
       case "ytplay":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} story wa anime`
           let yts = require("yt-search")
@@ -5178,6 +5350,9 @@ break**/
 
       case "ytmp3":
       case "mp3":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) return m.reply("Masukan Link!")
           m.reply(mess.wait)
@@ -5186,6 +5361,9 @@ break**/
         break
       case "ytmp4":
       case "mp4":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) return m.reply("Masukan Link!")
           m.reply(mess.wait)
@@ -5194,6 +5372,9 @@ break**/
         break
 
       case "getmusic":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           let { ytv } = require("./lib/y2mate")
           if (!text) throw `Example : ${prefix + command} 1`
@@ -5233,6 +5414,9 @@ break**/
         }
         break
       case "getvideo":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           let { ytv } = require("./lib/y2mate")
           if (!text) throw `Example : ${prefix + command} 1`
@@ -5267,6 +5451,9 @@ break**/
         }
         break
       case "pinterest":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           m.reply(mess.wait)
           let { pinterest } = require("./lib/scraper")
@@ -5280,6 +5467,9 @@ break**/
         }
         break
       case "waifu":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           tesk = `*${ucapanWaktu} Kak ${pushname}*\n*Silahkan Pilih Dibawah Ini*\n\n_Dosa Tanggung Sendiri :v_`
           let buttons = [
@@ -5292,6 +5482,9 @@ break**/
         }
         break
       case "sfw":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           m.reply(mess.wait)
           anu = await fetchJson(`https://waifu.pics/api/sfw/waifu`)
@@ -5305,6 +5498,9 @@ break**/
         break
       case "couple":
       case "ppcp":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           m.reply(mess.wait)
           let anu = await fetchJson(
@@ -5325,6 +5521,9 @@ break**/
         break
       case "coffe":
       case "kopi":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           let buttons = [
             {
@@ -5350,6 +5549,9 @@ break**/
       case "color":
       case "warnarandom":
       case "warna":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           m.reply(mess.wait)
           anu = await fetchJson(`https://api.popcat.xyz/randomcolor`)
@@ -5366,6 +5568,9 @@ break**/
         }
         break
       case "wallpaper":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw "Masukkan Query Title"
           let { wallpaper } = require("./lib/scraper")
@@ -5393,6 +5598,9 @@ break**/
         }
         break
       case "gcsearch":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           try {
             if (!text)
@@ -5423,6 +5631,9 @@ break**/
         }
         break
       case "wikimedia":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw "Masukkan Query Title"
           let { wikimedia } = require("./lib/scraper")
@@ -5447,6 +5658,9 @@ break**/
         break
       case "tinyurl":
       case "shortlink":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw "Masukkan Query Link!"
           let anu = await axios.get(
@@ -5460,6 +5674,9 @@ break**/
         }
         break
       case "linkpoi":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw "Masukkan Query Link!"
           let poi = await fetchJson(`https://linkpoi.ga/api.php?url=${text}`)
@@ -5471,6 +5688,9 @@ break**/
         }
         break
       case "bitly":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw "Masukkan Query Link!"
           let bitly = await fetchJson(
@@ -5484,6 +5704,9 @@ break**/
         }
         break
       case "cuttly":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw "Masukkan Query Link!"
           let cuttly = await fetchJson(
@@ -5562,6 +5785,9 @@ break**/
       case "glue":
       case "1917":
       case "leaves":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!q)
             return m.reply(`Example : ${prefix + command} ${global.ownername}`)
@@ -5753,6 +5979,9 @@ break**/
       case "wolf":
       case "retro":
       case "8bit":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!q) return m.reply(`Use ${prefix + command} text1|text2`)
           m.reply(mess.wait)
@@ -5802,6 +6031,9 @@ break**/
       case "patrick":
       case "patricksticker":
       case "petrik":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           var ano = await fetchJson(
             "https://raw.githubusercontent.com/rashidsiregar28/data/main/patrik"
@@ -5820,6 +6052,9 @@ break**/
       case "dogestick":
       case "doge":
       case "domge":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           var ano = await fetchJson(
             "https://raw.githubusercontent.com/rashidsiregar28/data/main/anjing"
@@ -5837,6 +6072,9 @@ break**/
       case "lovesticker":
       case "lovestick":
       case "slove":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           var ano = await fetchJson(
             "https://raw.githubusercontent.com/rashidsiregar28/data/main/bucin"
@@ -5853,6 +6091,9 @@ break**/
         break
       case "gura":
       case "gurastick":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           var ano = await fetchJson(
             "https://raw.githubusercontent.com/rashidsiregar28/data/main/gura"
@@ -5868,6 +6109,9 @@ break**/
         }
         break
       case "paimon":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           var ano = await fetchJson(
             "https://raw.githubusercontent.com/rashidsiregar28/data/main/Paimon"
@@ -5884,6 +6128,9 @@ break**/
         break
       case "sanime":
       case "animestick":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           var ano = await fetchJson(
             "https://raw.githubusercontent.com/rashidsiregar28/data/main/animestick"
@@ -5900,6 +6147,9 @@ break**/
         break
       case "mukelu":
       case "lu":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           var ano = await fetchJson(
             "https://raw.githubusercontent.com/rashidsiregar28/data/main/mukelu"
@@ -5916,6 +6166,9 @@ break**/
         break
       case "quotesanime":
       case "quoteanime":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           let { quotesAnime } = require("./lib/scraper")
           let anu = await quotesAnime()
@@ -5939,6 +6192,9 @@ break**/
 
       case "nomerhoki":
       case "nomorhoki":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!Number(text)) throw `Example : ${prefix + command} 6282221792667`
           let anu = await primbon.nomer_hoki(Number(text))
@@ -5952,6 +6208,9 @@ break**/
         break
       case "artimimpi":
       case "tafsirmimpi":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} belanja`
           let anu = await primbon.tafsir_mimpi(text)
@@ -5965,6 +6224,9 @@ break**/
         break
       case "ramalanjodoh":
       case "ramaljodoh":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text)
             throw `Example : ${
@@ -5991,6 +6253,9 @@ break**/
         break
       case "ramalanjodohbali":
       case "ramaljodohbali":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text)
             throw `Example : ${
@@ -6016,6 +6281,9 @@ break**/
         }
         break
       case "suamiistri":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text)
             throw `Example : ${
@@ -6042,6 +6310,9 @@ break**/
         break
       case "ramalancinta":
       case "ramalcinta":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text)
             throw `Example : ${
@@ -6067,6 +6338,9 @@ break**/
         }
         break
       case "artinama":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} Tio Ardianta`
           let anu = await primbon.arti_nama(text)
@@ -6080,6 +6354,9 @@ break**/
         break
       case "kecocokannama":
       case "cocoknama":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} Tio, 7, 7, 2005`
           let [nama, tgl, bln, thn] = text.split`,`
@@ -6095,6 +6372,9 @@ break**/
       case "kecocokanpasangan":
       case "cocokpasangan":
       case "pasangan":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} Asep|Wiwin`
           let [nama1, nama2] = text.split`|`
@@ -6110,6 +6390,9 @@ break**/
         break
       case "jadianpernikahan":
       case "jadiannikah":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} 6, 12, 2020`
           let [tgl, bln, thn] = text.split`,`
@@ -6123,6 +6406,9 @@ break**/
         }
         break
       case "sifatusaha":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!ext) throw `Example : ${prefix + command} 28, 12, 2021`
           let [tgl, bln, thn] = text.split`,`
@@ -6137,6 +6423,9 @@ break**/
         break
       case "rejeki":
       case "rezeki":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
           let [tgl, bln, thn] = text.split`,`
@@ -6151,6 +6440,9 @@ break**/
         break
       case "pekerjaan":
       case "kerja":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
           let [tgl, bln, thn] = text.split`,`
@@ -6166,6 +6458,9 @@ break**/
       case "ramalannasib":
       case "ramalnasib":
       case "nasib":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example❗:\n${prefix + command} 7,7,2005`
           let [tgl, bln, thn] = text.split`,`
@@ -6180,6 +6475,9 @@ break**/
         break
       case "potensipenyakit":
       case "penyakit":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} 7,7,2005`
           let [tgl, bln, thn] = text.split`,`
@@ -6194,6 +6492,9 @@ break**/
         break
       case "artitarot":
       case "tarot":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} 7,7,2005`
           let [tgl, bln, thn] = text.split`,`
@@ -6208,6 +6509,9 @@ break**/
         }
         break
       case "fengshui":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text)
             throw `Example : ${prefix + command} Tio,1,2005\n\nNote : ${
@@ -6224,6 +6528,9 @@ break**/
         }
         break
       case "haribaik":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} 7,7,2005`
           let [tgl, bln, thn] = text.split`,`
@@ -6238,6 +6545,9 @@ break**/
         break
       case "harisangar":
       case "taliwangke":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} 7,7,2005`
           let [tgl, bln, thn] = text.split`,`
@@ -6252,6 +6562,9 @@ break**/
         break
       case "harinaas":
       case "harisial":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} 7,7,2005`
           let [tgl, bln, thn] = text.split`,`
@@ -6266,6 +6579,9 @@ break**/
         break
       case "nagahari":
       case "harinaga":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} 7,7,2005`
           let [tgl, bln, thn] = text.split`,`
@@ -6280,6 +6596,9 @@ break**/
         break
       case "arahrejeki":
       case "arahrezeki":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} 7,7,2005`
           let [tgl, bln, thn] = text.split`,`
@@ -6293,6 +6612,9 @@ break**/
         }
         break
       case "peruntungan":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text)
             throw `Example : ${prefix + command} Tio,7,7,2005,2022\n\nNote : ${
@@ -6316,6 +6638,9 @@ break**/
         break
       case "weton":
       case "wetonjawa":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} 7,7,2005`
           let [tgl, bln, thn] = text.split`,`
@@ -6330,6 +6655,9 @@ break**/
         break
       case "sifat":
       case "karakter":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} Tio, 7,7,2005`
           let [nama, tgl, bln, thn] = text.split`,`
@@ -6348,6 +6676,9 @@ break**/
         }
         break
       case "keberuntungan":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} Tio, 7,7,2005`
           let [nama, tgl, bln, thn] = text.split`,`
@@ -6361,6 +6692,9 @@ break**/
         }
         break
       case "memancing":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} 12,1,2022`
           let [tgl, bln, thn] = text.split`,`
@@ -6374,6 +6708,9 @@ break**/
         }
         break
       case "masasubur":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text)
             throw `Example : ${prefix + command} 12,1,2022,28\n\nNote : ${
@@ -6391,6 +6728,9 @@ break**/
         break
       case "zodiak":
       case "zodiac":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} 7 7 2005`
           let zodiak = [
@@ -6435,6 +6775,9 @@ break**/
         }
         break
       case "mediafire":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw "Masukkan Query Link!"
           if (!isUrl(args[0]) && !args[0].includes("mediafire.com"))
@@ -6465,6 +6808,9 @@ break**/
       case "tiktok":
       case "tt":
       case "tiktoknowm":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         if (!text) throw "Masukkan Query Link!"
         anu = await fetchJson(
           `https://api.botcahx.biz.id/api/dowloader/tikok?url=${text}&apikey=Admin`
@@ -6482,6 +6828,9 @@ break**/
       case "facebook":
       case "fb":
       case "fbdl":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         if (!text) throw "Masukkan Query Link!"
         anu = await fetchJson(
           `https://api.botcahx.biz.id/api/dowloader/fbdown?url=${text}&apikey=Admin`
@@ -6515,6 +6864,9 @@ break*/
       case "ig":
       case "instagram":
       case "igdl":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         if (!text) throw "Masukkan Query Link!"
         try {
           anu = await fetchJson(
@@ -6524,7 +6876,7 @@ break*/
             m.chat,
             {
               video: { url: anu.result.url },
-              fileName: "botcahx.mp4",
+              fileName: "ryzstoree.mp4",
               mimetype: "video/mp4",
             },
             { quoted: m }
@@ -6541,6 +6893,9 @@ break*/
       case "twitter":
       case "tw":
       case "twitdl":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         if (!text) throw "Masukkan Query Link!"
         anu = await fetchJson(
           `https://api.botcahx.biz.id/api/dowloader/twitter?url=${text}&apikey=Admin`
@@ -6558,6 +6913,9 @@ break*/
       case "ssweb":
       case "ss":
       case "sshp":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw "Masukkan Query Link!"
           let img = `https://api.botcahx.biz.id/api/tools/ssweb?link=${text}&apikey=Admin`
@@ -6570,6 +6928,9 @@ break*/
         break
       case "ai":
       case "openai":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw "Masukkan text!"
           var api = await fetchJson(
@@ -6581,6 +6942,9 @@ break*/
       case "aiimg":
       case "openaiimg":
       case "aigambar":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw "Masukan text!"
           let img = await fetchJson(
@@ -6596,6 +6960,9 @@ break*/
       case "stalkgithub":
       case "githubstalk":
       case "ghstalk":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!q) throw `Contoh :\n${prefix + command} BOTCAHX`
           m.reply(mess.wait)
@@ -6645,6 +7012,9 @@ keywords : ${x.keywords}`
         break
       case "infogempa":
       case "gempa":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           let gempa = await fetchJson(
             `https://data.bmkg.go.id/DataMKG/TEWS/autogempa.json`
@@ -6655,6 +7025,9 @@ keywords : ${x.keywords}`
         break
         break
       case "cuaca":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         if (!q) throw `_Contoh_\n${prefix + command} palembang`
         let api_cuaca = "18d044eb8e1c06eaf7c5a27bb138694c"
         let unit_cuaca = "metric"
@@ -6676,6 +7049,9 @@ Udara: ${cuaca.main.pressure + " HPa"}`
         break
       case "getcase":
       case "c":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         if (!isCreator) return m.reply(mess.owner)
         const getCase = (cases) => {
           return (
@@ -6692,6 +7068,9 @@ Udara: ${cuaca.main.pressure + " HPa"}`
         m.reply(`${getCase(q)}`).catch((err) => m.reply(mess.error))
         break
       case "true":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text && !text.startsWith("+"))
             return m.reply(
@@ -6725,6 +7104,9 @@ Udara: ${cuaca.main.pressure + " HPa"}`
         }
         break
       case "ktpmaker":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         if (!q)
           return m.reply(
             `*Pengunaan :*\n${command} Nik| Provinsi| Kabupaten |Nama |TempatTanggalLahir |JenisKel |Alamat |RtRw |KelDesa |Kecamatan |Agama |Status |Pekerjaan |Region |Berlaku |golongan darah |LinkGambar\n\n${command} 6287877173955|Provinsi Jawa Barat|Kabupaten Bekasi|Arda Store|Bekasi |Laki-Laki|Bintara Jaya|02/05|Karang Indah|Bekasi Barat|Islam|Jomblo|Ngoding|Indonesia|2021-2080|abc|https://i.ibb.co/qrQX5DC/IMG-20220401-WA0084.jpg\n\n\n*「 INFO IMAGE 」*\nUntuk Gambar Profil KTP\nUpload Dari Web Berikut Ini\n\nhttps://i.waifu.pics\nhttps://c.top4top.io\n\nCONTOH HASIL NYA\nhttps://i.ibb.co/qrQX5DC/IMG-20220401-WA0084.jpg\nhttps://k.top4top.io/p_2208264hn0.jpg`
@@ -6765,6 +7147,9 @@ Udara: ${cuaca.main.pressure + " HPa"}`
         break
       case "qc":
       case "quotely":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         if (!text) return m.reply(`Kirim perintah *${prefix}qc* teks`)
         let jsonnya = {
           type: "quoted",
@@ -6813,6 +7198,9 @@ Udara: ${cuaca.main.pressure + " HPa"}`
 
         break
       case "dinokuning":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         var stiks = `http://api.lannn.me/api/sticker/dinokuning?apikey=Lann`
         tio.sendImageAsSticker(m.chat, stiks, m, {
           packname: global.packname,
@@ -6821,6 +7209,9 @@ Udara: ${cuaca.main.pressure + " HPa"}`
         break
       case "translateid":
       case "trid":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!q)
             return m.reply(
@@ -6840,6 +7231,9 @@ Udara: ${cuaca.main.pressure + " HPa"}`
 
       case "translateen":
       case "tren":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!q)
             return m.reply(
@@ -6858,6 +7252,9 @@ Udara: ${cuaca.main.pressure + " HPa"}`
         break
       case "get":
       case "fetch":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         if (!text) throw "*Sertakan URL!*"
         if (!/^https?:\/\//.test(text))
           throw "Masukan *URL* dengan http:// atau https://"
@@ -6883,6 +7280,9 @@ Udara: ${cuaca.main.pressure + " HPa"}`
         break
       case "tr":
       case "translate":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           const { translate } = require("@vitalets/google-translate-api")
           let defaultLang = "id"
@@ -6912,6 +7312,9 @@ Daftar bahasa yang didukung: https://cloud.google.com/translate/docs/languages
       case "img":
       case "pinterest":
       case "image":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw "Masukkan Query Link!"
           m.reply(mess.wait)
@@ -6931,6 +7334,9 @@ Daftar bahasa yang didukung: https://cloud.google.com/translate/docs/languages
         break
       case "umma":
       case "ummadl":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text)
             throw `Example : ${
@@ -6981,6 +7387,9 @@ Untuk Download Media Silahkan Klik salah satu Button dibawah ini atau masukkan c
         }
         break
       case "ringtone":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) throw `Example : ${prefix + command} black rover`
           let { ringtone } = require("./lib/scraper")
@@ -6999,6 +7408,9 @@ Untuk Download Media Silahkan Klik salah satu Button dibawah ini atau masukkan c
         break
 
       case "playstore":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           try {
             if (!text) throw `Example : ${prefix + command} clash of clans`
@@ -7021,6 +7433,9 @@ Untuk Download Media Silahkan Klik salah satu Button dibawah ini atau masukkan c
       case "tvschedule":
       case "jadwaltv":
       case "tv":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!q)
             throw "Pilih Channelnya Bro\n1.rcti\n2.nettv\n3.antv\n4.gtv\n5.indosiar\n6.inewstv\n7.kompastv\n8.metrotv\n9.mnctv\n10.rtv\n11.sctv\n12.trans7\n13.transtv\n14.tvone\n15.tvri"
@@ -7029,6 +7444,9 @@ Untuk Download Media Silahkan Klik salah satu Button dibawah ini atau masukkan c
         }
         break
       case "film":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           try {
             if (!q)
@@ -7055,6 +7473,9 @@ Untuk Download Media Silahkan Klik salah satu Button dibawah ini atau masukkan c
         break
       case "webtonsearch":
       case "webtoon":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!text) return m.reply("What Are you Looking For??")
           await m.reply(mess.wait)
@@ -7104,6 +7525,9 @@ Untuk Download Media Silahkan Klik salah satu Button dibawah ini atau masukkan c
         }
         break
       case "sponsor":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         {
           if (!m.isGroup) throw mess.group
           let qontak = `6285718971848@s.whatsapp.net`
@@ -7179,8 +7603,8 @@ Untuk Download Media Silahkan Klik salah satu Button dibawah ini atau masukkan c
 ├ *Powered* :\n├ *@${ini_kangbaned.split("@")[0]}*
 ├ *Mode* : ${tio.public ? "Public" : `Self`}
 ├ *Prefix* :「 MULTI-PREFIX 」
-├ *Total Hit* : ${jumlahcmd}
-├ *Total Hit Today* : ${jumlahharian}
+├ *Total Chat* : ${jumlahcmd}
+├ *Total Chat Today* : ${jumlahharian}
 ├ *Website* : _https://ryzstoree.com_
 ╰──❍
 ╭──❍「 *INDONESIA* 」❍
@@ -8687,6 +9111,9 @@ ${arr_rows.map((v) => `\n│ *»* ${v.title}`).join("")}
       case "sound159":
       case "sound160":
       case "sound161":
+          if (!isPremium && global.db.data.users[m.sender].limit < 1)
+            return m.reply(mess.endLimit) // respon ketika limit habis
+          db.data.users[m.sender].limit -= 1 // -1 limit
         tio_dev = await getBuffer(
           `https://github.com/DGXeon/Tiktokmusic-API/raw/master/tiktokmusic/${command}.mp3`
         )
