@@ -4144,12 +4144,12 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
           )
         }
         break
-      }
       case "next":
       case "lanjut":
           if (!isPremium && global.db.data.users[m.sender].limit < 1)
             return m.reply(mess.endLimit) // respon ketika limit habis
-          db.data.users[m.sender].limit -= 1 // -1 limit {
+          db.data.users[m.sender].limit -= 1 // -1 limit 
+        {
         if (m.isGroup)
           return m.reply("FITUR TIDAK DAPAT DIGUNAKAN DALAM GROUP!")
         this.anonymous = this.anonymous ? this.anonymous : {}
