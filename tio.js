@@ -2572,15 +2572,23 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
       case "buypremium":
       case "donate":
         {
-          m.reply(
-            `Halo\n\n _yukk bantu bot ini agar tetap hidup dengan donasi untuk perpanjang server, tenang donasi ini tidak ada minimalnya kok_\n\nhttps://saweria.co/rzkiyy\nJika Kamu Berkenan Silakan Kirim Bukti Bahwa Kamu Telah Berdonasi Agar Nomor Kamu Dapat Di Upgare Yaa!*`
-          )
+          donater = `Halo\n\n_yukk bantu bot ini agar tetap hidup dengan donasi untuk perpanjang server, tenang donasi ini tidak ada minimalnya kok_\n\nhttps://saweria.co/rzkiyy\nJika Kamu Berkenan Silakan Kirim Bukti Bahwa Kamu Telah Berdonasi Agar Nomor Kamu Dapat Di Upgare Yaa!`
+          let buttons = [
+            {
+              buttonId: "hehehe",
+              buttonText: { displayText: "SAYA SUDAH DONASI!" },
+              type: 1,
+            },
+          ]
+          await tio.sendButtonText(m.chat, buttons, donater, esce, m, {
+            quoted: fkontak,
+          })
         }
         break
       case "sewabot":
       case "sewa":
         {
-          sewa = `「 *PRICELIST SEWA BOT* 」\n\n*»* 7 DAY : *5.000 IDR*\n*»* 14 DAY : *7.500*\n*»* 30 DAY : *12.000 IDR*\n*»* 60 DAY :*17.000 IDR*\n\nAvailable Payment \n_QRIS/DANA/BCA/MANDIRI_ \n\nBerikut Beberapa Fitur Tersedia `
+          sewa = `「 *PRICELIST SEWA BOT* 」\n\n*»* 7 DAY : *5.000 IDR*\n*»* 14 DAY : *7.500*\n*»* 30 DAY : *12.000 IDR*\n*»* 60 DAY :*20.000 IDR*\n\nAvailable Payment \n_QRIS/DANA/BCA/MANDIRI_ \n\nBerikut Beberapa Fitur Tersedia `
           let buttons = [
             {
               buttonId: "mgroup2",
