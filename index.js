@@ -176,7 +176,7 @@ ${chalk.bgRed("Participant Update")}
                     if (anu.action == 'add') {
                         var but = [{ buttonId: 'list', buttonText: { displayText: 'Klik Untuk Menampilkan List' }, type: 1 },]
                         tekswell = `Halo @${num.split('@')[0]} 👋\nSelamat Datang Di Grup *${metadata.subject}*\n\n📛 Name : @${num.split('@')[0]}\n☎️ Nomer : ${num.split('@')[0]}\n🎎 Group : ${metadata.subject}\n👫 Member : ${metadata.participants.length}`
-                        tio.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: tekswell, footer: omlen, buttons: but })
+                        tio.sendMessage(anu.id, {contextInfo: { mentionedJid: [num] }, caption: tekswell, footer: omlen, buttons: but })
                         //Message Saat Ada User Yang Keluar Dari Grup
                     } else if (anu.action == 'remove' ) {
                         // console.log(num.split("@")[0])
@@ -187,12 +187,12 @@ ${chalk.bgRed("Participant Update")}
                     } else if (anu.action == 'promote') {
                         var but = [{ buttonId: 'menu', buttonText: { displayText: 'Selamat' }, type: 1 },]
                         tekspromote = `Selamat @${num.split("@")[0]} Atas Kenaikan Jabatannya Di Grup ${metadata.subject}`
-                        tio.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: tekspromote, footer: omlen, buttons: but })
+                        tio.sendMessage(anu.id, { image: {contextInfo: { mentionedJid: [num] }, caption: tekspromote, footer: omlen, buttons: but })
                         //Message Saat Ada Yang Turun Jabatan
                     } else if (anu.action == 'demote') {
                         var but = [{ buttonId: 'menu', buttonText: { displayText: 'Sabar' }, type: 1 },]
                         teksdemote = `Jabatan @${num.split("@")[0]} Telah Di Turunkan Di Grup ${metadata.subject}`
-                        tio.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: teksdemote, footer: omlen, buttons: but })
+                        tio.sendMessage(anu.id, {contextInfo: { mentionedJid: [num] }, caption: teksdemote, footer: omlen, buttons: but })
                     }
                 }
             } else {
