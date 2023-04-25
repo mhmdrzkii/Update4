@@ -182,7 +182,7 @@ ${chalk.bgRed("Participant Update")}
                         // console.log(num.split("@")[0])
                         var but = [{ buttonId: 'menu', buttonText: { displayText: 'Selamat Tinggal' }, type: 1 },]
                         teksbye = `Selamat Tinggal @${num.split("@")[0]} 👋\n\n📛 Name : @${num.split('@')[0]}\n☎️ Nomer : ${num.split('@')[0]}\n🎎 Group : ${metadata.subject}\n👫 Member : ${metadata.participants.length}`
-                        tio.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: teksbye, footer: omlen, buttons: but })
+                        tio.sendMessage(anu.id, {contextInfo: { mentionedJid: [num] }, caption: teksbye, footer: omlen, buttons: but })
                         //Message Saat Ada Yang Naik Jabatan
                     } else if (anu.action == 'promote') {
                         var but = [{ buttonId: 'menu', buttonText: { displayText: 'Selamat' }, type: 1 },]
