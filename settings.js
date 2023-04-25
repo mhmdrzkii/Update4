@@ -6,7 +6,7 @@ global.owner = ["6283850055745"]
 global.ownernomer = "6283850055745"
 global.premium = ["6283850055745"]
 global.packname = "Sticker By"
-global.author = "RYZSTORE"
+global.author = "MoovaBOT"
 global.jumlha = "999"
 global.jumhal = "100000000000000"
 global.jumlah = "1000000000"
@@ -29,16 +29,16 @@ global.mess = {
 }
 global.limitawal = {
   premium: "Infinity",
-  free: 100,
+  free: 20,
 }
 global.thumb = fs.readFileSync("./media/image/tio.jpg")
 global.faall = fs.readFileSync("./media/image/fake.jpg")
 global.mygit = "https://github.com/RYZSTORE"
 global.webmy = "https://ryzstoree.com"
 global.ghme = "https://github.com/RYZSTORE"
-global.botname = "RYZSTORE"
-global.omlen = "RYZSTORE"
-global.weem = "RYZSTORE"
+global.botname = "MoovaBOT"
+global.omlen = "MoovaBOT"
+global.weem = "MoovaBOT"
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
   fs.unwatchFile(file)
